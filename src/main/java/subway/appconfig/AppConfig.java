@@ -9,11 +9,15 @@ import subway.controller.LineController;
 import subway.controller.StationController;
 import subway.domain.Line;
 import subway.domain.Station;
+import subway.view.InputView;
+import subway.view.OutputView;
 
 public class AppConfig {
     public static void initialize() {
         StationController.getInstance();
         LineController.getInstance();
+        OutputView.getInstance();
+        InputView.getInstance();
         initializeStations();
         initializeLines();
         initializeLineSection();

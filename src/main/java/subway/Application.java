@@ -2,11 +2,14 @@ package subway;
 
 import java.util.Scanner;
 import subway.appconfig.AppConfig;
+import subway.controller.AppController;
 
 public class Application {
     public static void main(String[] args) {
-        final Scanner scanner = new Scanner(System.in);
         AppConfig.initialize();
+
+        AppController appController = new AppController();
+        appController.run();
 
     }
 }
