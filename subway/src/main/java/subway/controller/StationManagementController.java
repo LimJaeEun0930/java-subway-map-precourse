@@ -3,6 +3,7 @@ package main.java.subway.controller;
 import static main.java.subway.controller.StationController.getStationByName;
 import static main.java.subway.controller.StationController.stationController;
 import static main.java.subway.repository.StationRepository.addStation;
+import static main.java.subway.repository.StationRepository.deleteStation;
 import static main.java.subway.repository.StationRepository.stations;
 import static main.java.subway.view.StationInputView.stationInputView;
 
@@ -37,7 +38,7 @@ public class StationManagementController extends ManagementController {
     private void removeStation() {
         String stationNameToDelete = stationInputView.getStationNameToDelete();
         Station station = getStationByName(stationNameToDelete);
-        stations().remove(station);
+        deleteStation(station);
     }
 
     private void printAllStations() {
