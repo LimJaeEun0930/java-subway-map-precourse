@@ -13,11 +13,11 @@ public class SectionManagementController extends ManagementController {
         String choice = sectionInputView.selectToDo();
         if (choice.equals("1")) {
             registerSection();
+            return;
         }
         if (choice.equals("2")) {
             removeSection();
         }
-
     }
 
     private void registerSection() {

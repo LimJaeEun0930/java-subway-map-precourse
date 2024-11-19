@@ -31,6 +31,10 @@ public class Line {
         return stations.size();
     }
 
+    public final LinkedList<Station> getStations() {
+        return stations;
+    }
+
     public void removeSection(Station station) {
         stations.remove(station);
     }
