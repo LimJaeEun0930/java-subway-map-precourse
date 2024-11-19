@@ -3,7 +3,6 @@ package main.java.subway.controller;
 import static main.java.subway.controller.LineController.lineController;
 import static main.java.subway.repository.LineRepository.addLine;
 import static main.java.subway.repository.LineRepository.deleteLineByName;
-import static main.java.subway.repository.LineRepository.lines;
 import static main.java.subway.view.LineInputView.lineInputView;
 import static main.java.subway.view.OutputView.outputView;
 

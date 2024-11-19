@@ -1,9 +1,9 @@
 package main.java.subway.view;
 
-import static main.java.subway.appconfig.AppConstants.ERROR_ALREADY_EXIST_STAION;
-import static main.java.subway.appconfig.AppConstants.ERROR_NON_EXIST_STATION;
-import static main.java.subway.appconfig.AppConstants.ERROR_STATION_NAME_NOT_END_WITH_SUFFIX;
-import static main.java.subway.appconfig.AppConstants.ERROR_TOO_SHORT_STATION_NAME;
+import static main.java.subway.appconfig.ErrorConstants.ERROR_ALREADY_EXIST_STAION;
+import static main.java.subway.appconfig.ErrorConstants.ERROR_NON_EXIST_STATION;
+import static main.java.subway.appconfig.ErrorConstants.ERROR_STATION_NAME_NOT_END_WITH_SUFFIX;
+import static main.java.subway.appconfig.ErrorConstants.ERROR_TOO_SHORT_STATION_NAME;
 
 
 import main.java.subway.repository.StationRepository;

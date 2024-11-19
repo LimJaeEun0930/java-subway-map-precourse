@@ -1,10 +1,9 @@
 package main.java.subway.view;
 
-import static main.java.subway.appconfig.AppConstants.ERROR_NON_EXIST_LINE;
-import static main.java.subway.appconfig.AppConstants.ERROR_NON_EXIST_STATION;
-import static main.java.subway.appconfig.AppConstants.ERROR_NON_EXIST_STATION_IN_LINE;
-import static main.java.subway.appconfig.AppConstants.ERROR_WRONG_INPUT;
-import static main.java.subway.controller.LineController.lineController;
+import static main.java.subway.appconfig.ErrorConstants.ERROR_NON_EXIST_LINE;
+import static main.java.subway.appconfig.ErrorConstants.ERROR_NON_EXIST_STATION;
+import static main.java.subway.appconfig.ErrorConstants.ERROR_NON_EXIST_STATION_IN_LINE;
+import static main.java.subway.appconfig.ErrorConstants.ERROR_WRONG_INPUT;
 
 import main.java.subway.controller.LineController;
 import main.java.subway.controller.StationController;
@@ -81,8 +80,7 @@ public class SectionInputView extends InputView{
             try {
                 System.out.println("## 순서를 입력하세요.");
                 int input = scanner.nextInt();
-                if (input <= 0 || input > line.getStationLength() + 1) {
-                    System.out.println(ERROR_WRONG_INPUT);
+                if (validateRange(line, input)) {
                     continue;
                 }
                 return input;
@@ -90,5 +88,13 @@ public class SectionInputView extends InputView{
                 System.out.println(ERROR_WRONG_INPUT);
             }
         }
+    }
+
+    private boolean validateRange(Line line, int input) {
+        if (input <= 0 || input > line.getStationLength() + 1) {
+            System.out.println(ERROR_WRONG_INPUT);
+            return true;
+        }
+        return false;
     }
 }

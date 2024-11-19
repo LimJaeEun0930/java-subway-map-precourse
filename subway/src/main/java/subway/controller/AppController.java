@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import main.java.subway.view.InputView;
 import main.java.subway.view.MainInputView;
-import main.java.subway.view.OutputView;
+
 
 public class AppController {
     private InputView inputView;
@@ -20,6 +20,7 @@ public class AppController {
     public void run() {
         while (true) {
             String choice = inputView.selectToDo();
+            System.out.println();
             if (choice.equals("Q")) {
                 break;
             }

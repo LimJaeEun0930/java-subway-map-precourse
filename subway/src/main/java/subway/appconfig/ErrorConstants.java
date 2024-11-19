@@ -1,6 +1,7 @@
 package main.java.subway.appconfig;
 
-public class AppConstants {
+public class ErrorConstants {
+    public static final String ERROR_UNABLE_FUNCTION = "[ERROR] 선택할 수 없는 기능입니다.";
     public static final String ERROR_WRONG_INPUT = "[ERROR] 잘못된 입력입니다";
     public static final String ERROR_ALREADY_EXIST_STAION = "[ERROR] 이미 존재하는 역입니다.";
     public static final String ERROR_NON_EXIST_STATION = "[ERROR] 존재하지 않는 역입니다.";

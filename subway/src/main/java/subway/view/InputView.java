@@ -1,6 +1,6 @@
 package main.java.subway.view;
 
-import static main.java.subway.appconfig.AppConstants.ERROR_WRONG_INPUT;
+import static main.java.subway.appconfig.ErrorConstants.ERROR_UNABLE_FUNCTION;
 
 import java.util.Scanner;
 
@@ -20,7 +20,8 @@ public abstract class InputView {
             if (input.length() == 1 && this.options.contains(input)) {
                 return input;
             }
-            System.out.println(ERROR_WRONG_INPUT);
+            System.out.println(ERROR_UNABLE_FUNCTION);
+            System.out.println();
         }
     }
 

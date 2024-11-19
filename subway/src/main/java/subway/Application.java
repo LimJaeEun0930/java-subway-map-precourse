@@ -8,7 +8,6 @@ import main.java.subway.controller.AppController;
 public class Application {
     public static void main(String[] args) {
         AppConfig.initialize();
-
         AppController appController = new AppController();
         appController.run();
 

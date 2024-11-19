@@ -1,11 +1,9 @@
 package main.java.subway.controller;
 
-import static main.java.subway.view.LineInputView.lineInputView;
 import static main.java.subway.view.SectionInputView.sectionInputView;
 
 import main.java.subway.domain.Line;
 import main.java.subway.domain.Station;
-import main.java.subway.view.LineInputView;
 
 public class SectionManagementController extends ManagementController {
     @Override
