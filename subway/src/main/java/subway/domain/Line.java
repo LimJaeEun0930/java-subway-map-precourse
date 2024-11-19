@@ -1,10 +1,10 @@
 package main.java.subway.domain;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Line {
     private String name;
-    private ArrayList<Station> stations = new ArrayList<>();
+    private LinkedList<Station> stations = new LinkedList<>();
 
     public Line(String name, Station start, Station end) {
         this.name = name;
@@ -12,6 +12,9 @@ public class Line {
         this.stations.add(end);
     }
 
+    public boolean isSectionInLine(Station station) {
+        return stations.contains(station);
+    }
     public String getName() {
         return name;
     }
@@ -22,6 +25,14 @@ public class Line {
         }
         stations.add(sequence - 1, station);
         return true;
+    }
+
+    public int getStationLength() {
+        return stations.size();
+    }
+
+    public void removeSection(Station station) {
+        stations.remove(station);
     }
 
     @Override
