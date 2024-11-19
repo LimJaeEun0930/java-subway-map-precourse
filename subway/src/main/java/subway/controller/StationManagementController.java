@@ -1,5 +1,6 @@
 package main.java.subway.controller;
 
+import static main.java.subway.controller.StationController.createStation;
 import static main.java.subway.controller.StationController.getStationByName;
 import static main.java.subway.controller.StationController.stationController;
 import static main.java.subway.repository.StationRepository.addStation;
@@ -31,7 +32,7 @@ public class StationManagementController extends ManagementController {
 
     private void registerStation() {
         String newStationName = stationInputView.getNewStation();
-        Station newStation = new Station(newStationName);
+        Station newStation = StationController.createStation(newStationName);
         addStation(newStation);
     }
 

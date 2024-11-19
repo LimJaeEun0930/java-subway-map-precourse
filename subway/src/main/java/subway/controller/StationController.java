@@ -9,12 +9,6 @@ public class StationController {
     private StationController() {
     }
 
-//    public static StationController getInstance() {
-//        if (stationController == null) {
-//            stationController = new StationController();
-//        }
-//        return stationController;
-//    }
     public static Station getStationByName(String input) {
         for (Station station : StationRepository.stations()) {
             if (input.equals(station.getName())) {
@@ -22,6 +16,13 @@ public class StationController {
             }
         }
         return null;
+    }
+
+    public static Station getStationBynameWithPrompt() {
+
+    }
+    public static Station createStation(String line) {
+        return new Station(line);
     }
 
 }
