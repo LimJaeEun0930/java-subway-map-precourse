@@ -15,7 +15,7 @@ import main.java.subway.view.OutputView;
 
 public class AppConfig {
     public static void initialize() {
-        StationController.getInstance();
+        //StationController.getInstance();
         LineController.getInstance();
         OutputView.getInstance();
         initializeStations();

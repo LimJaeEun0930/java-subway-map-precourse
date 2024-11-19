@@ -1,5 +1,7 @@
 package main.java.subway.controller;
 
+import static main.java.subway.controller.StationController.getStationByName;
+import static main.java.subway.controller.StationController.stationController;
 import static main.java.subway.repository.StationRepository.stations;
 import static main.java.subway.view.StationInputView.stationInputView;
 
@@ -16,6 +18,9 @@ public class StationManagementController extends ManagementController {
         if (choice.equals("1")) {
             registerStation();
         }
+        if (choice.equals("2")) {
+            removeStation();
+        }
 
     }
 
@@ -23,5 +28,11 @@ public class StationManagementController extends ManagementController {
         String newStationName = stationInputView.getNewStation();
         Station newStation = new Station(newStationName);
         stations().add(newStation);
+    }
+
+    private void removeStation() {
+        String stationNameToDelete = stationInputView.getStationNameToDelete();
+        Station station = getStationByName(stationNameToDelete);
+        stations().remove(station);
     }
 }

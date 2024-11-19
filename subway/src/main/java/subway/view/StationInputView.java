@@ -1,11 +1,11 @@
 package main.java.subway.view;
 
 import static main.java.subway.appconfig.AppConstants.ERROR_ALREADY_EXIST_STAION;
+import static main.java.subway.appconfig.AppConstants.ERROR_NON_EXIST_STATION;
 import static main.java.subway.appconfig.AppConstants.ERROR_STATION_NAME_NOT_END_WITH_SUFFIX;
 import static main.java.subway.appconfig.AppConstants.ERROR_TOO_SHORT_STATION_NAME;
-import static subway.appconfig.AppConstants.WRONG_INPUT;
 
-import main.java.subway.domain.Station;
+
 import main.java.subway.repository.StationRepository;
 
 public class StationInputView extends InputView{
@@ -27,14 +27,24 @@ public class StationInputView extends InputView{
         while (true) {
             System.out.println("## 등록할 역 이름을 입력하세요.");
             String input = scanner.nextLine();
-            if (validateStationName(input) == true) {
+            if (validateStationNameToAdd(input) == true) {
                 return input;
             }
         }
     }
 
-    private static boolean validateStationName(String input) {
-        if (StationRepository.stations().stream().filter(station -> station.getName().equals(input)).findFirst().isPresent()) {
+    public String getStationNameToDelete() {
+        while (true) {
+            System.out.println("## 삭제할 역 이름을 입력하세요.");
+            String input = scanner.nextLine();
+            if (isInStations(input)) {
+                return input;
+            }
+            System.out.println(ERROR_NON_EXIST_STATION);
+        }
+    }
+    private static boolean validateStationNameToAdd(String input) {
+        if (isInStations(input)) {
             System.out.println(ERROR_ALREADY_EXIST_STAION);
             return false;
         }
@@ -47,5 +57,10 @@ public class StationInputView extends InputView{
             return false;
         }
         return true;
+    }
+
+    private static boolean isInStations(String input) {
+        return StationRepository.stations().stream().filter(station -> station.getName().equals(input)).findFirst()
+                .isPresent();
     }
 }

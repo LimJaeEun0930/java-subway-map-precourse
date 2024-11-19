@@ -4,17 +4,17 @@ import main.java.subway.domain.Station;
 import main.java.subway.repository.StationRepository;
 
 public class StationController {
-    private static StationController stationController;
+    public static StationController stationController = new StationController();
 
     private StationController() {
     }
 
-    public static StationController getInstance() {
-        if (stationController == null) {
-            stationController = new StationController();
-        }
-        return stationController;
-    }
+//    public static StationController getInstance() {
+//        if (stationController == null) {
+//            stationController = new StationController();
+//        }
+//        return stationController;
+//    }
     public static Station getStationByName(String input) {
         for (Station station : StationRepository.stations()) {
             if (input.equals(station.getName())) {
