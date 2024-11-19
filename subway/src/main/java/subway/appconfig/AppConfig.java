@@ -1,19 +1,17 @@
-package subway.appconfig;
+package main.java.subway.appconfig;
 
-import static subway.controller.LineController.getLineByName;
-import static subway.controller.StationController.getStationByName;
-import static subway.domain.LineRepository.addLine;
-import static subway.domain.StationRepository.addStation;
+import static main.java.subway.controller.LineController.getLineByName;
+import static main.java.subway.controller.StationController.getStationByName;
+import static main.java.subway.repository.LineRepository.addLine;
+import static main.java.subway.repository.StationRepository.addStation;
 
-import subway.controller.LineController;
-import subway.controller.StationController;
-import subway.domain.Line;
-import subway.domain.Station;
+import main.java.subway.domain.Line;
+import main.java.subway.domain.Station;
+
+
 
 public class AppConfig {
     public static void initialize() {
-        StationController.getInstance();
-        LineController.getInstance();
         initializeStations();
         initializeLines();
         initializeLineSection();

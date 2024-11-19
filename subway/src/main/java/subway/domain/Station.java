@@ -1,4 +1,4 @@
-package subway.domain;
+package main.java.subway.domain;
 
 public class Station {
     private String name;
@@ -11,6 +11,10 @@ public class Station {
         return name;
     }
 
+    @Override
+    public String toString() {
+        return this.name;
+    }
     @Override
     public int hashCode() {
         return name.hashCode();
