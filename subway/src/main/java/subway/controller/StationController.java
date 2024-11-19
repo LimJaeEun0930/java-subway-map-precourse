@@ -18,9 +18,6 @@ public class StationController {
         return null;
     }
 
-    public static Station getStationBynameWithPrompt() {
-
-    }
     public static Station createStation(String line) {
         return new Station(line);
     }

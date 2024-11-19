@@ -23,4 +23,9 @@ public class Line {
         stations.add(sequence - 1, station);
         return true;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

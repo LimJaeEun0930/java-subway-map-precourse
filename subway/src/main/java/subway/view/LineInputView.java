@@ -3,8 +3,10 @@ package main.java.subway.view;
 import static main.java.subway.appconfig.AppConstants.ERROR_ALREADY_EXIST_LINE;
 import static main.java.subway.appconfig.AppConstants.ERROR_ALREADY_EXIST_STAION;
 import static main.java.subway.appconfig.AppConstants.ERROR_LINE_NAME_NOT_END_WITH_SUFFIX;
+import static main.java.subway.appconfig.AppConstants.ERROR_NON_EXIST_LINE;
 import static main.java.subway.appconfig.AppConstants.ERROR_TOO_SHORT_LINE_NAME;
 import static main.java.subway.controller.LineController.getLineByName;
+import static main.java.subway.repository.LineRepository.deleteLineByName;
 
 import java.util.Optional;
 import main.java.subway.domain.Line;
@@ -33,6 +35,17 @@ public class LineInputView extends InputView {
             if (validateLineName(input) == true) {
                 return input;
             }
+        }
+    }
+
+    public String getLineNameToDelete() {
+        while (true) {
+            System.out.println("## 삭제할 노선 이름을 입력하세요.");
+            String input = scanner.nextLine();
+            if (getLineByName(input) != null) {
+                return input;
+            }
+            System.out.println(ERROR_NON_EXIST_LINE);
         }
     }
 
