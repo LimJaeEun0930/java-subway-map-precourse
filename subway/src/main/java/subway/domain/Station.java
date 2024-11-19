@@ -12,6 +12,10 @@ public class Station {
     }
 
     @Override
+    public String toString() {
+        return this.name;
+    }
+    @Override
     public int hashCode() {
         return name.hashCode();
     }
