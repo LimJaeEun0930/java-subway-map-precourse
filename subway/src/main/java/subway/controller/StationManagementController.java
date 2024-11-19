@@ -6,6 +6,7 @@ import static main.java.subway.controller.StationController.stationController;
 import static main.java.subway.repository.StationRepository.addStation;
 import static main.java.subway.repository.StationRepository.deleteStation;
 import static main.java.subway.repository.StationRepository.stations;
+import static main.java.subway.view.OutputView.outputView;
 import static main.java.subway.view.StationInputView.stationInputView;
 
 import main.java.subway.domain.Station;
@@ -25,9 +26,8 @@ public class StationManagementController extends ManagementController {
             removeStation();
         }
         if (choice.equals("3")) {
-            printAllStations();
+            outputView.printAllStations();
         }
-
     }
 
     private void registerStation() {
@@ -42,11 +42,4 @@ public class StationManagementController extends ManagementController {
         deleteStation(station);
     }
 
-    private void printAllStations() {
-        System.out.println("## 역 목록");
-        for (Station station : stations()) {
-            System.out.printf("INFO " + station + "%n");
-        }
-        System.out.println();
-    }
 }

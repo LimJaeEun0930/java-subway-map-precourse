@@ -5,6 +5,7 @@ import static main.java.subway.repository.LineRepository.addLine;
 import static main.java.subway.repository.LineRepository.deleteLineByName;
 import static main.java.subway.repository.LineRepository.lines;
 import static main.java.subway.view.LineInputView.lineInputView;
+import static main.java.subway.view.OutputView.outputView;
 
 import main.java.subway.domain.Line;
 
@@ -24,14 +25,8 @@ public class LineManagementController extends ManagementController{
             return;
         }
         if (choice.equals("3")) {
-            printAllLines();
+            outputView.printAllLines();
         }
     }
 
-    private static void printAllLines() {
-        System.out.println("## 노선 목록");
-        for (Line line : lines()) {
-            System.out.println("[INFO] " + line);
-        }
-    }
 }

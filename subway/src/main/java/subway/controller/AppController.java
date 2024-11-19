@@ -25,6 +25,7 @@ public class AppController {
             }
             if (choice.equals("4")) {
                 outputView.printAllLineInfo();
+                continue;
             }
             ManagementController controller = managementControllers.get(Integer.parseInt(choice) - 1);
             controller.run();
