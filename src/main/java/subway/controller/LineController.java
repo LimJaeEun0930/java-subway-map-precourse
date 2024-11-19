@@ -25,4 +25,8 @@ public class LineController {
         }
         return null;
     }
+
+    public static void printAllLineInfo() {
+
+    }
 }
