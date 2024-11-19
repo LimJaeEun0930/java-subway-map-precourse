@@ -1,9 +1,8 @@
-package subway.controller;
+package main.java.subway.controller;
 
-import subway.domain.Line;
-import subway.domain.LineRepository;
-import subway.domain.Station;
-import subway.domain.StationRepository;
+
+import main.java.subway.domain.Line;
+import main.java.subway.domain.LineRepository;
 
 public class LineController {
     private static LineController lineController;

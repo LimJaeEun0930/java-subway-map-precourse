@@ -1,19 +1,20 @@
-package subway.controller;
+package main.java.subway.controller;
 
 import java.util.ArrayList;
 import java.util.List;
-import subway.view.InputView;
-import subway.view.OutputView;
+import main.java.subway.view.InputView;
+import main.java.subway.view.MainInputView;
+import main.java.subway.view.OutputView;
 
 public class AppController {
     private OutputView outputView;
     private InputView inputView;
-    private final ArrayList<ManagementController> managementControllers = (ArrayList<ManagementController>) List.of(new StationManagementController(),
-            new LineManagementController(), new SectionManagementController());
+    private final ArrayList<ManagementController> managementControllers = new ArrayList<>(List.of(new StationManagementController(),
+            new LineManagementController(), new SectionManagementController()));
 
     public AppController() {
         outputView = OutputView.getInstance();
-        inputView = InputView.getInstance();
+        inputView = new MainInputView();
     }
 
     public void run() {

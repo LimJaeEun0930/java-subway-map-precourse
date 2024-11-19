@@ -1,8 +1,9 @@
-package subway;
+package main.java.subway;
 
-import java.util.Scanner;
-import subway.appconfig.AppConfig;
-import subway.controller.AppController;
+import main.java.subway.appconfig.AppConfig;
+import main.java.subway.controller.AppController;
+
+
 
 public class Application {
     public static void main(String[] args) {

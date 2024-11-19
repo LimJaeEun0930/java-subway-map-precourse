@@ -1,4 +1,4 @@
-package subway.view;
+package main.java.subway.view;
 
 public final class OutputView {
     private static OutputView outputView;

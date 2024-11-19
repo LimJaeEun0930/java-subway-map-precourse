@@ -1,4 +1,4 @@
-package subway.controller;
+package main.java.subway.controller;
 
 public abstract class ManagementController {
 
