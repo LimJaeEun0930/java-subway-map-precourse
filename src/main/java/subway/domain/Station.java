@@ -11,5 +11,20 @@ public class Station {
         return name;
     }
 
-    // 추가 기능 구현
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || !(obj instanceof Station)) {
+            return false;
+        }
+        Station station = (Station) obj;
+        return this.hashCode() == station.hashCode();
+    }
 }
