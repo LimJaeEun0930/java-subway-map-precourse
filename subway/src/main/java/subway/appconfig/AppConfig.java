@@ -2,11 +2,12 @@ package main.java.subway.appconfig;
 
 import static main.java.subway.controller.LineController.getLineByName;
 import static main.java.subway.controller.StationController.getStationByName;
-import static main.java.subway.domain.LineRepository.addLine;
-import static main.java.subway.domain.StationRepository.addStation;
+import static main.java.subway.repository.LineRepository.addLine;
+import static main.java.subway.repository.StationRepository.addStation;
 
 import main.java.subway.controller.LineController;
 import main.java.subway.controller.StationController;
+
 import main.java.subway.domain.Line;
 import main.java.subway.domain.Station;
 import main.java.subway.view.OutputView;

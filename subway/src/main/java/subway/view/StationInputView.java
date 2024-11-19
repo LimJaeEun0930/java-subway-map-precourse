@@ -1,10 +1,17 @@
 package main.java.subway.view;
 
+import static main.java.subway.appconfig.AppConstants.ERROR_ALREADY_EXIST_STAION;
+import static main.java.subway.appconfig.AppConstants.ERROR_STATION_NAME_NOT_END_WITH_SUFFIX;
+import static main.java.subway.appconfig.AppConstants.ERROR_TOO_SHORT_STATION_NAME;
 import static subway.appconfig.AppConstants.WRONG_INPUT;
 
-public class StationInputView extends InputView{
+import main.java.subway.domain.Station;
+import main.java.subway.repository.StationRepository;
 
-    public StationInputView() {
+public class StationInputView extends InputView{
+    public static StationInputView stationInputView = new StationInputView();
+
+    private StationInputView() {
         super("123B");
     }
 
@@ -14,6 +21,31 @@ public class StationInputView extends InputView{
         System.out.println("2. 역 삭제");
         System.out.println("3. 역 조회");
         System.out.println("B. 돌아가기");
-        System.out.printf("%n" + "## 원하는 기능을 선택하세요." + "%n");
+    }
+
+    public String getNewStation() {
+        while (true) {
+            System.out.println("## 등록할 역 이름을 입력하세요.");
+            String input = scanner.nextLine();
+            if (validateStationName(input) == true) {
+                return input;
+            }
+        }
+    }
+
+    private static boolean validateStationName(String input) {
+        if (StationRepository.stations().stream().filter(station -> station.getName().equals(input)).findFirst().isPresent()) {
+            System.out.println(ERROR_ALREADY_EXIST_STAION);
+            return false;
+        }
+        if (input.length() < 2) {
+            System.out.println(ERROR_TOO_SHORT_STATION_NAME);
+            return false;
+        }
+        if (!input.endsWith("역")) {
+            System.out.println(ERROR_STATION_NAME_NOT_END_WITH_SUFFIX);
+            return false;
+        }
+        return true;
     }
 }

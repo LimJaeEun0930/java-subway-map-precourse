@@ -1,7 +1,7 @@
 package main.java.subway.controller;
 
 import main.java.subway.domain.Station;
-import main.java.subway.domain.StationRepository;
+import main.java.subway.repository.StationRepository;
 
 public class StationController {
     private static StationController stationController;

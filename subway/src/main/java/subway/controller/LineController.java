@@ -2,7 +2,7 @@ package main.java.subway.controller;
 
 
 import main.java.subway.domain.Line;
-import main.java.subway.domain.LineRepository;
+import main.java.subway.repository.LineRepository;
 
 public class LineController {
     private static LineController lineController;

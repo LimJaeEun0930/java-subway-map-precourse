@@ -1,9 +1,10 @@
-package main.java.subway.domain;
+package main.java.subway.repository;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import main.java.subway.domain.Station;
 
 public class StationRepository {
     private static final List<Station> stations = new ArrayList<>();

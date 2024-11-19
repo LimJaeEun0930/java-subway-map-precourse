@@ -3,8 +3,9 @@ package main.java.subway.view;
 import main.java.subway.domain.Line;
 
 public class LineInputView extends InputView {
+    public static LineInputView lineInputView = new LineInputView();
 
-    public LineInputView() {
+    private LineInputView() {
         super("123B");
     }
     protected void printSelectPage() {
